@@ -1,0 +1,23 @@
+$lightgrey: lightgrey;
+
+.margin-t-20 {
+    margin-top: 20;
+}
+
+.link {
+    font-size: 12px;
+    cursor: pointer;
+    padding: 2px;
+    border: 1px solid $lightgrey;
+    border-radius: 3px;
+    width: 120px;
+    text-align: center;
+}
+
+.delete-link {
+    @extend .link;
+    float: right;
+}
+.add-cmt {
+    @extend .link;  
+}

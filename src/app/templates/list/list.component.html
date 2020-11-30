@@ -1,0 +1,20 @@
+<div fxLayout="row" fxFlex="100" fxLayoutAlign="start start">
+    <div class="board-list" fxLayout="column" fxFlex="15" *ngFor="let list of lists;let i = index">
+        <div fxLayout="row">
+            <div fxFlex="40">
+                <span class="title-list"> 
+                    {{ list.name }} {{ list.uid }}
+                 </span>
+            </div>
+            <div fxFlex="60" fxLayoutAlign="end">
+                <span class="delete-link" (click)="deleteLists(list, i)"> Delete this list </span>
+            </div>
+        </div>
+        <app-card></app-card>
+    </div>
+    <div fxLayout="column" fxFlex="15">
+        <div class="add-list" (click)="addLists()">
+            <span> Add new list... </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div fxLayout="column" cdkDropList (cdkDropListDropped)="drop($event)">
+    <div class="board-card" fxLayout="row" *ngFor="let card of cards; let i = index" cdkDrag (click)="openCardPopup(card, i)">
+        <span class="card-name">
+            {{card.name}} {{card.uid}}
+        </span>
+    </div>
+</div>
+<div class="add-link" fxLayout="row">
+    <span (click)="addCards()"> Add new card...</span>
+</div>

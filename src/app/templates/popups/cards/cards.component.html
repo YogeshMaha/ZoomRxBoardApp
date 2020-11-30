@@ -1,0 +1,41 @@
+<!-- <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Favorite food</mat-label>
+    <input matInput placeholder="Ex. Pizza" value="Sushi">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field> -->
+
+<div fxLayout="column" fxLayoutGap="10px">
+    <div fxLayout="row">
+        <div fxFlex="50"> {{ data.name }} </div>
+        <div fxFlex="50" fxLayoutAlign="end">
+            <span class="delete-link" (click)="deleteCard()"> Delete this card </span>
+        </div>
+    </div>
+    <div class="margin-t-20" fxLayout="row">
+        <mat-form-field fxFlex="100" appearance="outline">
+            <mat-label>Card Name</mat-label>
+            <input matInput [(ngModel)]="data.name" [disabled]="true">
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field fxFlex="100" appearance="outline">
+            <mat-label>Card Comment</mat-label>
+            <textarea matInput [(ngModel)]="data.comment"></textarea>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <span class="add-cmt" (click)="addComment(data)"> Add comment </span>
+    </div>
+    <div class="margin-t-20" fxLayout="row" *ngFor="let cmt of comments.slice().reverse()">
+        <div fxFlex="30">
+        <span> {{ cmt.comment }} </span>
+        </div>
+        <div fxFlex="30"> 
+            <span> {{ cmt.date | date: 'dd MMM YYYY hh:mm a' }} </span>
+        </div>
+    </div>
+</div>

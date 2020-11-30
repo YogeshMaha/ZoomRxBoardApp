@@ -1,0 +1,16 @@
+$white: #ffffff;
+$lightgrey: lightgrey;
+
+.sample-board-container {
+    background-color: $white;
+    height: 100%;
+    .sample-board-session {
+        padding: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        background-color: $lightgrey;
+        height: 90%;
+        border-radius: 4px;
+        overflow: auto;
+    }
+}
